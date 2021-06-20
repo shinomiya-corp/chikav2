@@ -1,0 +1,9 @@
+overwrite: true
+generates:
+  src/chika/generated/graphql.ts:
+    schema: ${ANILIST_SCHEMA}
+    documents: ./src/chika/**/*.graphql
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - typescript-graphql-request
