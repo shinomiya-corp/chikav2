@@ -1,14 +1,14 @@
 import { ApplicationCommandData } from 'discord.js';
 import { CommandCategory, CommandExtraData } from '../types';
-import { animeWorker } from './anime.worker';
+import { mangaWorker } from './manga.worker';
 
 export const metadata: ApplicationCommandData = {
-  name: 'anime',
-  description: 'Search for an anime on AniList.',
+  name: 'manga',
+  description: 'Search for a manga on AniList.',
   options: [
     {
       name: 'search',
-      description: 'Title of the anime to search for.',
+      description: 'Title of the manga to search for.',
       type: 'STRING',
       required: true,
     },
@@ -17,5 +17,5 @@ export const metadata: ApplicationCommandData = {
 
 export const data: CommandExtraData = {
   category: CommandCategory.UTILITY,
-  worker: animeWorker,
+  worker: mangaWorker,
 };

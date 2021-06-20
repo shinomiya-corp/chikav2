@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { baseEmbed } from '../common/embeds';
-import { parseHtml } from '../common/helpers';
+import { parseHtml } from '../common/helpers/typography';
 import { unknown_png } from '../common/resources';
 import { AnimeQuery } from '../generated/graphql';
 
@@ -20,7 +20,7 @@ export function animeInfoEmbed(info: NonNullable<AnimeQuery['Media']>) {
 
   return baseEmbed()
     .setThumbnail(coverImage?.medium || unknown_png)
-    .setTitle(title?.userPreferred || '(Untitled)')
+    .setTitle(title?.userPreferred || 'Untitled')
     .setDescription(
       description ? parseHtml(description) : `*No description for this anime.*`,
     )

@@ -1,3 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
+import { getSdk } from '../../generated/graphql';
 
-export const anilistClient = new GraphQLClient(process.env.ANILIST_SCHEMA);
+const anilistClient = new GraphQLClient(process.env.ANILIST_SCHEMA);
+export const anilist = getSdk(anilistClient);

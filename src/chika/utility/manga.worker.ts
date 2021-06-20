@@ -2,26 +2,23 @@ import { Logger } from '@nestjs/common';
 import { CommandInteraction } from 'discord.js';
 import { sendErrorEmbed } from '../common/embeds';
 import { MediaType } from '../generated/graphql';
-import { animeInfoEmbed } from './anime.embed';
 import { anilist } from './graphql/aniListClient';
+import { mangaInfoEmbed } from './manga.embed';
 
-const logger = new Logger('anime');
+const logger = new Logger('manga');
 
-export async function animeWorker(interaction: CommandInteraction) {
+export async function mangaWorker(interaction: CommandInteraction) {
   const search = interaction.options.get('search');
   if (typeof search?.value !== 'string') {
     sendErrorEmbed(interaction);
     return;
   }
-  const res = await anilist.anime({
-    search: search.value,
-    type: MediaType.Anime,
-  });
-  if (!res.Media) {
-    sendErrorEmbed(
-      interaction,
-      `I couldn't find **${search.value}** on AniList.`,
-    ).catch((err) => {
+  const res = await anilist
+    .manga({
+      search: search.value,
+      type: MediaType.Manga,
+    })
+    .catch((err) => {
       logger.error(err);
       sendErrorEmbed(
         interaction,
@@ -29,7 +26,13 @@ export async function animeWorker(interaction: CommandInteraction) {
       );
       return null;
     });
+
+  if (!res?.Media) {
+    sendErrorEmbed(
+      interaction,
+      `I couldn't find **${search.value}** on AniList.`,
+    );
     return;
   }
-  interaction.reply({ embeds: [animeInfoEmbed({ ...res.Media })] });
+  interaction.reply({ embeds: [mangaInfoEmbed({ ...res.Media })] });
 }

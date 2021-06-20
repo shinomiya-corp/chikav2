@@ -23,6 +23,7 @@ export class Chika extends Client {
 
   private _commandsUp() {
     this.guilds.cache.get('848575017406562334')?.commands.set(commandData);
+    this.guilds.cache.get('235389763668934656')?.commands.set(commandData);
   }
 
   private _listenersUp() {

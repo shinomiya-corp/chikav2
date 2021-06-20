@@ -1,6 +1,6 @@
 import { ApplicationCommandData, Collection } from 'discord.js';
-import * as glob from 'glob';
-import * as path from 'path';
+import glob from 'glob';
+import path from 'path';
 import { Command, CommandExtraData } from './types';
 
 const [commandData, commands] = getAllCommands();
