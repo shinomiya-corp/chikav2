@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { baseEmbed } from '../common/embeds';
-import { parseHtml } from '../common/helpers/typography';
+import { parseHtml } from '../common/helpers/typography.helper';
 import { unknown_png } from '../common/resources';
 import { AnimeQuery } from '../generated/graphql';
 

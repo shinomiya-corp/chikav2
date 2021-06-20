@@ -1,6 +1,6 @@
 import { ApplicationCommandData, CommandInteraction } from 'discord.js';
 
-export interface CommandExtraData {
+export interface ICommandExtraData {
   worker: (interaction: CommandInteraction) => void;
   category: CommandCategory;
 }
@@ -9,4 +9,4 @@ export enum CommandCategory {
   UTILITY,
 }
 
-export type Command = ApplicationCommandData & CommandExtraData;
+export type ICommand = ApplicationCommandData & ICommandExtraData;

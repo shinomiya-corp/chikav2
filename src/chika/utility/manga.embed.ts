@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { baseEmbed } from '../common/embeds';
-import { parseFuzzyDate, parseHtml } from '../common/helpers/typography';
+import { parseFuzzyDate, parseHtml } from '../common/helpers/typography.helper';
 import { unknown_png } from '../common/resources';
 import { MangaQuery } from '../generated/graphql';
 

@@ -1,14 +1,14 @@
 import { ApplicationCommandData } from 'discord.js';
 import { CommandCategory, ICommandExtraData } from '../types';
-import { mangaWorker } from './manga.worker';
+import { charWorker } from './char.worker';
 
 export const metadata: ApplicationCommandData = {
-  name: 'manga',
-  description: 'Search for a manga on AniList',
+  name: 'char',
+  description: 'Search for a character on AniList',
   options: [
     {
       name: 'search',
-      description: 'Title of the manga to search for',
+      description: 'Name of the character to search for',
       type: 'STRING',
       required: true,
     },
@@ -17,5 +17,5 @@ export const metadata: ApplicationCommandData = {
 
 export const data: ICommandExtraData = {
   category: CommandCategory.UTILITY,
-  worker: mangaWorker,
+  worker: charWorker,
 };

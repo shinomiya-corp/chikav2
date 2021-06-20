@@ -20,10 +20,6 @@ export async function mangaWorker(interaction: CommandInteraction) {
     })
     .catch((err) => {
       logger.error(err);
-      sendErrorEmbed(
-        interaction,
-        `I couldn't find **${search.value}** on AniList.`,
-      );
       return null;
     });
 
