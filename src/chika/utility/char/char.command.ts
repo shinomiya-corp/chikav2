@@ -1,5 +1,5 @@
 import { ApplicationCommandData } from 'discord.js';
-import { CommandCategory, ICommandExtraData } from '../types';
+import { CommandGroup, ICommandExtra } from '../../types';
 import { charWorker } from './char.worker';
 
 export const metadata: ApplicationCommandData = {
@@ -8,14 +8,14 @@ export const metadata: ApplicationCommandData = {
   options: [
     {
       name: 'search',
-      description: 'Name of the character to search for',
+      description: "The character's name",
       type: 'STRING',
       required: true,
     },
   ],
 };
 
-export const data: ICommandExtraData = {
-  category: CommandCategory.UTILITY,
+export const data: ICommandExtra = {
+  group: CommandGroup.UTILITY,
   worker: charWorker,
 };

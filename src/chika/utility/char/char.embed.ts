@@ -1,12 +1,12 @@
-import { baseEmbed } from '../common/embeds';
+import { wrap } from 'module';
+import { baseEmbed } from '../../common/embeds';
 import {
   parseFuzzyDate,
   parseHtml,
-  wrap,
-} from '../common/helpers/typography.helper';
-import { unknown_png } from '../common/resources';
-import { CharacterQuery } from '../generated/graphql';
-import { truncate } from '../common/helpers/typography.helper';
+  truncate,
+} from '../../common/typography.util';
+import { unknown_png } from '../../common/resources';
+import { CharacterQuery } from '../../generated/graphql';
 
 export const charInfoEmbed = (
   info: NonNullable<CharacterQuery['Character']>,

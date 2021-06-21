@@ -1,8 +1,9 @@
 import { Logger } from '@nestjs/common';
 import { CommandInteraction } from 'discord.js';
-import { sendErrorEmbed } from '../common/embeds';
-import { MediaType } from '../generated/graphql';
-import { anilist } from './graphql/aniListClient';
+import { sendErrorEmbed } from '../../common/embeds';
+import { MediaType } from '../../generated/graphql';
+import { anilist } from '../graphql/aniListClient';
+
 import { mangaInfoEmbed } from './manga.embed';
 
 const logger = new Logger('manga');

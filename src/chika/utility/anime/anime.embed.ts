@@ -1,8 +1,8 @@
 import _ from 'lodash';
-import { baseEmbed } from '../common/embeds';
-import { parseHtml } from '../common/helpers/typography.helper';
-import { unknown_png } from '../common/resources';
-import { AnimeQuery } from '../generated/graphql';
+import { baseEmbed } from '../../common/embeds';
+import { parseHtml } from '../../common/typography.util';
+import { unknown_png } from '../../common/resources';
+import { AnimeQuery } from '../../generated/graphql';
 
 export function animeInfoEmbed(info: NonNullable<AnimeQuery['Media']>) {
   const {

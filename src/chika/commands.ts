@@ -1,7 +1,7 @@
 import { ApplicationCommandData, Collection } from 'discord.js';
 import glob from 'glob';
 import path from 'path';
-import { ICommand, ICommandExtraData } from './types';
+import { ICommand, ICommandExtra } from './types';
 
 const [commandData, commands] = getAllCommands();
 export { commandData, commands };
@@ -16,7 +16,7 @@ function getAllCommands(): [
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const { metadata, data } = require(path.resolve(file)) as {
       metadata: ApplicationCommandData;
-      data: ICommandExtraData;
+      data: ICommandExtra;
     };
     commandData.push(metadata);
     commands.set(metadata.name, { ...metadata, ...data });

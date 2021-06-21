@@ -1,12 +1,21 @@
-import { ApplicationCommandData, CommandInteraction } from 'discord.js';
+import {
+  ApplicationCommandData,
+  CommandInteraction,
+  MessageEmbed,
+} from 'discord.js';
 
-export interface ICommandExtraData {
+export interface ICommandExtra {
   worker: (interaction: CommandInteraction) => void;
-  category: CommandCategory;
+  group: CommandGroup;
 }
 
-export enum CommandCategory {
+export interface ICommandInfo {
+  usage: string;
+  embed: MessageEmbed;
+}
+
+export enum CommandGroup {
   UTILITY,
 }
 
-export type ICommand = ApplicationCommandData & ICommandExtraData;
+export type ICommand = ApplicationCommandData & ICommandExtra;

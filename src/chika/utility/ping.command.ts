@@ -1,12 +1,12 @@
 import { ApplicationCommandData } from 'discord.js';
-import { CommandCategory, ICommandExtraData } from '../types';
+import { CommandGroup, ICommandExtra } from '../types';
 
 export const metadata: ApplicationCommandData = {
   name: 'ping',
-  description: 'Get a pong.',
+  description: 'Get a pong',
 };
 
-export const data: ICommandExtraData = {
-  category: CommandCategory.UTILITY,
+export const data: ICommandExtra = {
+  group: CommandGroup.UTILITY,
   worker: (interaction) => interaction.reply('pong'),
 };

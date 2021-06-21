@@ -1,8 +1,8 @@
 import _ from 'lodash';
-import { baseEmbed } from '../common/embeds';
-import { parseFuzzyDate, parseHtml } from '../common/helpers/typography.helper';
-import { unknown_png } from '../common/resources';
-import { MangaQuery } from '../generated/graphql';
+import { baseEmbed } from '../../common/embeds';
+import { parseHtml, parseFuzzyDate } from '../../common/typography.util';
+import { unknown_png } from '../../common/resources';
+import { MangaQuery } from '../../generated/graphql';
 
 export function mangaInfoEmbed(info: NonNullable<MangaQuery['Media']>) {
   const {

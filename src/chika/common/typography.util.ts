@@ -1,5 +1,5 @@
 import he from 'he';
-import { FuzzyDate } from '../../generated/graphql';
+import { FuzzyDate } from '../generated/graphql';
 
 export function parseHtml(s: string) {
   return he.decode(s.replace(/(<([^>]+)>)/gi, ''));

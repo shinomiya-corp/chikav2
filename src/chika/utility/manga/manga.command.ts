@@ -1,5 +1,5 @@
 import { ApplicationCommandData } from 'discord.js';
-import { CommandCategory, ICommandExtraData } from '../types';
+import { CommandGroup, ICommandExtra } from '../../types';
 import { mangaWorker } from './manga.worker';
 
 export const metadata: ApplicationCommandData = {
@@ -8,14 +8,14 @@ export const metadata: ApplicationCommandData = {
   options: [
     {
       name: 'search',
-      description: 'Title of the manga to search for',
+      description: "The manga's title",
       type: 'STRING',
       required: true,
     },
   ],
 };
 
-export const data: ICommandExtraData = {
-  category: CommandCategory.UTILITY,
+export const data: ICommandExtra = {
+  group: CommandGroup.UTILITY,
   worker: mangaWorker,
 };
