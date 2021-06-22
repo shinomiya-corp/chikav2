@@ -1,5 +1,5 @@
 import { ApplicationCommandData } from 'discord.js';
-import { CommandGroup, ICommandExtra } from '../../types';
+import { CommandGroup, ICommandExtra } from '../../common/types';
 import { animeWorker } from './anime.worker';
 
 export const metadata: ApplicationCommandData = {

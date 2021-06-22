@@ -1,1 +1,0 @@
-import { commandData } from '../../commands';

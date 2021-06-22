@@ -1,5 +1,5 @@
 import { ApplicationCommandData } from 'discord.js';
-import { CommandGroup, ICommandExtra } from '../types';
+import { CommandGroup, ICommandExtra } from '../common/types';
 
 export const metadata: ApplicationCommandData = {
   name: 'ping',
@@ -8,5 +8,5 @@ export const metadata: ApplicationCommandData = {
 
 export const data: ICommandExtra = {
   group: CommandGroup.UTILITY,
-  worker: (interaction) => interaction.reply('pong'),
+  worker: (interaction) => interaction.reply('Pong.'),
 };

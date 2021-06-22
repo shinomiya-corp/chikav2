@@ -1,15 +1,17 @@
 import { Logger } from '@nestjs/common';
 import { Client, ClientOptions } from 'discord.js';
-import { commandData, commands } from './commands';
+import { commandData, commands, groupEmbeds } from './static';
+import { IChikaContext } from './common/types';
 
 export class Chika extends Client {
   private logger = new Logger('Client');
+  readonly context: IChikaContext = { groupEmbeds };
 
   constructor(options: ClientOptions) {
     super(options);
   }
 
-  static async start(options: ClientOptions) {
+  static async up(options: ClientOptions) {
     const chika = new Chika(options);
     await chika._login();
     chika._commandsUp();
@@ -34,7 +36,7 @@ export class Chika extends Client {
     this.on('interaction', (interaction) => {
       if (!interaction.isCommand()) return;
       this.logger.log(`Received command: ${interaction.commandName}`);
-      commands.get(interaction.commandName)?.worker(interaction);
+      commands.get(interaction.commandName)?.worker(interaction, this.context);
     });
   }
 }
